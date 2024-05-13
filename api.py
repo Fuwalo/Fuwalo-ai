@@ -6,6 +6,7 @@ from piano_transcription_inference import PianoTranscription, sample_rate, load_
 from io import BytesIO
 from data import savemidi
 import base64
+import json
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -33,6 +34,6 @@ async def transcribe_audio(audio: UploadFile = File(...)):
 
     # Return the MIDI data as raw bytes
     midi_data_in_memory = buf.getvalue()
-    midi_base64 = base64.b64encode(midi_data_in_memory).decode('ascii')
+    midi_base64 = json.dumps(midi_data_in_memory)
     savemidi(midi_base64)
     return Response(content=midi_data_in_memory, media_type="audio/midi")
