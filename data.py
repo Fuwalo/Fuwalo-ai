@@ -21,7 +21,7 @@ def generate_random_id():
 
 endpoint = "couchbases://cb.kgwdsceo9opxyqm.cloud.couchbase.com" # Replace this with Connection String
 username = "the4strange@gmail.com" # Replace this with username from database access credentials
-password = "Fuwalo2004@" # Replace this with password from database access credentials
+password = "Fuwalo2002@54" # Replace this with password from database access credentials
 bucket_name = "travel-sample"
 scope_name = "_default"
 collection_name = "midi_data"
